@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>Робот</title>
+ </head>
+ <body>
+   <script type="text/JavaScript">
+     client = new WebSocket("ws://127.0.0.1:8080");
+     function myFunction() {
+       client.send(document.getElementById("username").value + ' ' + document.getElementById("password").value + ' ' + document.getElementById("link").value);
+
+       document.getElementById("username").value = "";
+       document.getElementById("password").value = "";
+       document.getElementById("link").value = "";
+     }
+
+   </script>
+
+  USERNAME: <input type="text" id="username"><br><br>
+  PASSWORD: <input type="text" id="password"><br><br>
+  LINK: <input type="text" id="link"><br>
+  <br>
+  <button onclick="myFunction()">Отправить</button>
+ </body>
